@@ -39,10 +39,9 @@ SCENARIO("check array of random integers is generated within a given range and s
                 for (int i = 0; i < size; i++)
                 {
                     REQUIRE(arr[i] <= upper);
-                    REQUIRE(arr[i] >= lower);
-
-                    free(arr);
+                    REQUIRE(arr[i] >= lower);               
                 }
+                free(arr);
             }
         }
     }
