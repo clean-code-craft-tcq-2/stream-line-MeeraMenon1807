@@ -8,7 +8,7 @@ void getSingleStreamOfValues(int dataStream[])
 {
     int idx;
     scanf("%*s", &dataStream); // Skip parameter string at beginning of stream
-    for (idx = 0; idx < STREAM_LENGTH; idx++)
+    for (idx = 0; idx < 49; idx++)
     {
         scanf("%i", &dataStream[idx]);
     }
