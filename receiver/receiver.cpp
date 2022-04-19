@@ -22,11 +22,11 @@ int main()
   int i;
   getSingleStreamOfValues(&temperatureDataStream[0]);
    getSingleStreamOfValues(&temperatureDataStream1[0]);
-  for(i=0;i<STREAM_LENGTH;i++)
+  for(i=0;i<49;i++)
   {
     printf("%d ",temperatureDataStream[i] );
   }
- for(i=0;i<STREAM_LENGTH;i++)
+ for(i=0;i<49;i++)
   {
     printf("%d ",temperatureDataStream1[i] );
   }
