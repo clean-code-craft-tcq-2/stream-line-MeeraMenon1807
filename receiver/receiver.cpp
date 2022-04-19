@@ -18,11 +18,17 @@ void getSingleStreamOfValues(int dataStream[])
 int main()
 {
   int temperatureDataStream[STREAM_LENGTH];
+   int temperatureDataStream1[STREAM_LENGTH];
   int i;
   getSingleStreamOfValues(&temperatureDataStream[0]);
+   getSingleStreamOfValues(&temperatureDataStream1[0]);
   for(i=0;i<STREAM_LENGTH;i++)
   {
-    printf("%d\n",temperatureDataStream[i] );
+    printf("%d ",temperatureDataStream[i] );
+  }
+ for(i=0;i<STREAM_LENGTH;i++)
+  {
+    printf("%d ",temperatureDataStream1[i] );
   }
  
   return 0;
