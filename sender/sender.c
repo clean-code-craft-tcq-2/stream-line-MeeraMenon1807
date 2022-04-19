@@ -17,7 +17,7 @@ int *setArrayWithValuesInRange(int lower, int upper, int arraySize, int *arr)
 
 void printToConsole(char *fieldName, int *values, int size)
 {
-    printf("%s:", fieldName);
+    printf("%s: ", fieldName);
     for (int i = 0; i < size; i++)
     {
         printf("%d ", values[i]);
