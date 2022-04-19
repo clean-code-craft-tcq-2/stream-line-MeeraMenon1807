@@ -8,7 +8,7 @@ void getSingleStreamOfValues(int dataStream[])
 {
     int idx;
     scanf("%*s", &dataStream); // Skip parameter string at beginning of stream
-    for (idx = 0; idx < 49; idx++)
+    for (idx = 0; idx < STREAM_LENGTH; idx++)
     {
         scanf("%i", &dataStream[idx]);
     }
@@ -22,11 +22,11 @@ int main()
   int i;
   getSingleStreamOfValues(&temperatureDataStream[0]);
    getSingleStreamOfValues(&temperatureDataStream1[0]);
-  for(i=0;i<49;i++)
+  for(i=0;i<STREAM_LENGTH;i++)
   {
     printf("%d ",temperatureDataStream[i] );
   }
- for(i=0;i<49;i++)
+ for(i=0;i<STREAM_LENGTH;i++)
   {
     printf("%d ",temperatureDataStream1[i] );
   }
