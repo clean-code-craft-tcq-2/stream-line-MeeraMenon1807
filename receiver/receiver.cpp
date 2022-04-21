@@ -1,6 +1,8 @@
+/*
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+
 
 #define STREAM_LENGTH 50
 
@@ -33,3 +35,4 @@ int main()
  
   return 0;
 }
+*/
