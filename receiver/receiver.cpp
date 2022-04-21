@@ -38,8 +38,8 @@ float findMovingAvgOfLastFiveSamples(int *dataSample, int sampleIndex)
 bool printStatisticOnConsole(batteryParameters SOC,batteryParameters Temperature)
 {
     bool retVal;
-    cout<<"Maximum SOC:"<<SOC.MaxValue<<",Minimum SOC:"<<SOC.MinValue<<",Simple moving average of SOC:"<<SOC.MovingAVg<<"\n";
-    cout<<"Maximum Temperature:"<<Temperature.MaxValue<<",Minimum Temperature:"<<Temperature.MinValue<<",Simple moving average of Temperature:"<<Temperature.MovingAVg<<"\n";
+    std::cout<<"Maximum SOC:"<<SOC.MaxValue<<",Minimum SOC:"<<SOC.MinValue<<",Simple moving average of SOC:"<<SOC.MovingAVg<<"\n";
+    std::cout<<"Maximum Temperature:"<<Temperature.MaxValue<<",Minimum Temperature:"<<Temperature.MinValue<<",Simple moving average of Temperature:"<<Temperature.MovingAVg<<"\n";
      retVal= true;
     return retVal;
 }
