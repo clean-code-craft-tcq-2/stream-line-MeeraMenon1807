@@ -46,4 +46,3 @@ TEST_CASE("Test printStatisticOnConsole")
   
    REQUIRE(printStatisticOnConsole(DummyStateOFCharge,DummyTemperature) == true);
 }
-  
