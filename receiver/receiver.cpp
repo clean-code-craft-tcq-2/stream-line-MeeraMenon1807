@@ -1,9 +1,55 @@
+#include "receiver.h"
+
+
+int FindMAXValueWithCurrentSample(int OldMaxValue, int CurrentSample)
+{
+    return (OldMaxValue>=CurrentSample) ? OldMaxValue: CurrentSample;
+}
+
+int FindMinValueWithCurrentSample(int OldMaxValue, int CurrentSample)
+{
+    return (OldMaxValue<=CurrentSample) ? OldMaxValue: CurrentSample;
+}
+
+float findMovingAvgOfLastFiveSamples(int *dataSample, int sampleIndex)
+{
+    int loopCntr;
+    int Sum=0;
+    float Avg=0.0;
+    if(sampleIndex<5)
+    {
+        for(loopCntr=0;loopCntr<=sampleIndex;loopCntr++)
+        {
+            
+            Sum = Sum+dataSample[loopCntr];
+            
+        }
+        Avg = Sum/(float)(sampleIndex+1);
+    }
+    else
+    {
+        Sum = dataSample[sampleIndex]+dataSample[sampleIndex-1]+dataSample[sampleIndex-2]+dataSample[sampleIndex-3]+dataSample[sampleIndex-4];
+        Avg= (float)Sum/5;
+    }
+    return Avg;
+}
+
+
+bool printStatisticOnConsole(batteryParameters SOC,batteryParameters Temperature)
+{
+    bool retVal;
+    cout<<"Maximum SOC:"<<SOC.MaxValue<<",Minimum SOC:"<<SOC.MinValue<<",Simple moving average of SOC:"<<SOC.MovingAVg<<"\n";
+    cout<<"Maximum Temperature:"<<Temperature.MaxValue<<",Minimum Temperature:"<<Temperature.MinValue<<",Simple moving average of Temperature:"<<Temperature.MovingAVg<<"\n";
+     retVal= true;
+    return retVal;
+}
+
+
+
+
+
+
 /*
-#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-
-
 #define STREAM_LENGTH 50
 
 void getSingleStreamOfValues(int dataStream[])
