@@ -1,6 +1,19 @@
 #include "receiver.h"
 
 
+void getStreamingData(int *dataSample)
+{
+    int sampleIndex;
+    char *fieldname;
+    scanf("%s", fieldname); 
+    for (sampleIndex = 0; sampleIndex < NUMBEROFSAMPLE; sampleIndex++)
+    {
+        scanf("%i", &dataSample[sampleIndex]);
+    }
+ 
+}
+
+
 int FindMAXValueWithCurrentSample(int OldMaxValue, int CurrentSample)
 {
     return (OldMaxValue>=CurrentSample) ? OldMaxValue: CurrentSample;
