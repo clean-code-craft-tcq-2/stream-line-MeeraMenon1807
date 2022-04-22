@@ -46,3 +46,17 @@ TEST_CASE("Test printStatisticOnConsole")
   
    REQUIRE(printStatisticOnConsole(DummyStateOFCharge,DummyTemperature) == true);
 }
+
+TEST_CASE("Get streaming data and compute statistics")
+{
+   int SOCDatastream[NUMBEROFSAMPLE];
+   int TemperatureDatastream[NUMBEROFSAMPLE];
+   
+   assert(ReadStreamingDataAndComputeStatistics(SOCDatastream,TemperatureDatastream)== true);
+   for(int i=0;i<NUMBEROFSAMPLE;i++)
+   {
+   std::cout<<SOCDatastream[i]<<"  "<< TemperatureDatastream[i]<<"\n";  
+  //assert(SOCDatastream[i]>=0 && SOCDatastream[i]<NUMBEROFSAMPLE);
+   //assert(TemperatureDatastream[i]>=0 && TemperatureDatastream[i] < NUMBEROFSAMPLE);
+   }
+}
