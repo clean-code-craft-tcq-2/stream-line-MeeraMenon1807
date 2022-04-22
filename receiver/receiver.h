@@ -1,7 +1,5 @@
 #include <iostream>
-#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
+#include "../sender/sender.h"
 
 #define NUMBEROFSAMPLE 50
 
