@@ -14,3 +14,5 @@ int FindMAXValueWithCurrentSample(int OldMaxValue, int CurrentSample);
 int FindMinValueWithCurrentSample(int OldMaxValue, int CurrentSample);
 float findMovingAvgOfLastFiveSamples(int *dataSample, int sampleIndex);
 bool printStatisticOnConsole(batteryParameters SOC,batteryParameters Temperature);
+bool ReadStreamingDataAndComputeStatistics(int *SOCDatastream, int *TemperatureDatastream );
+void getStreamingData(int *dataSample);
