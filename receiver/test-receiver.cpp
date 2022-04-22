@@ -56,8 +56,8 @@ TEST_CASE("Get streaming data and compute statistics")
    REQUIRE(ReadStreamingDataAndComputeStatistics(SOCDatastream,TemperatureDatastream)== true);
    for(int index=0;index<NUMBEROFSAMPLE;index++)
    {
-   std::cout<<"***************************Test case data************************** \n";
-   std::cout<<TemperatureDatastream[index]<<"  "<<SOCDatastream[index]<<"\n";  
+   //std::cout<<"***************************Test case data************************** \n";
+   //std::cout<<TemperatureDatastream[index]<<"  "<<SOCDatastream[index]<<"\n";  
    REQUIRE((SOCDatastream[index]>=MIN_SOC  && SOCDatastream[index]<=MAX_SOC) == true);
    REQUIRE((TemperatureDatastream[index]>=MIN_TEMPERATURE  && TemperatureDatastream[index] <= MAX_TEMPERATURE)== true);
    }
