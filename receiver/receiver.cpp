@@ -4,7 +4,7 @@
 void getStreamingData(int *dataSample)
 {
     int sampleIndex;
-    char *fieldname;
+    char fieldname[20];
     scanf("%s", fieldname); 
     for (sampleIndex = 0; sampleIndex < NUMBEROFSAMPLE; sampleIndex++)
     {
