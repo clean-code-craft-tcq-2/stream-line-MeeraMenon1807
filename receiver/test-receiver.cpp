@@ -43,7 +43,7 @@ TEST_CASE("Find Moving average with latest streaming data")
 TEST_CASE("Test printStatisticOnConsole")
 {
   struct batteryParameters DummyStateOFCharge, DummyTemperature;
-  
+  std::cout<<"***************************test case data************************** \n";
    REQUIRE(printStatisticOnConsole(DummyStateOFCharge,DummyTemperature) == true);
 }
 
@@ -52,11 +52,13 @@ TEST_CASE("Get streaming data and compute statistics")
    int SOCDatastream[NUMBEROFSAMPLE];
    int TemperatureDatastream[NUMBEROFSAMPLE];
    
-   assert(ReadStreamingDataAndComputeStatistics(SOCDatastream,TemperatureDatastream)== true);
-   for(int i=0;i<NUMBEROFSAMPLE;i++)
+   std::cout<<"***************************Actual statdata************************** \n";
+   REQUIRE(ReadStreamingDataAndComputeStatistics(SOCDatastream,TemperatureDatastream)== true);
+   for(int index=0;index<NUMBEROFSAMPLE;index++)
    {
-   std::cout<<SOCDatastream[i]<<"  "<< TemperatureDatastream[i]<<"\n";  
-  //assert(SOCDatastream[i]>=0 && SOCDatastream[i]<NUMBEROFSAMPLE);
-   //assert(TemperatureDatastream[i]>=0 && TemperatureDatastream[i] < NUMBEROFSAMPLE);
+   std::cout<<"***************************Test case data************************** \n";
+   std::cout<<TemperatureDatastream[index]<<"  "<<SOCDatastream[index]<<"\n";  
+   REQUIRE(SOCDatastream[index]>=MIN_SOC  && SOCDatastream[index]<=MAX_SOC);
+   REQUIRE(TemperatureDatastream[index]>=MIN_TEMPERATURE  && TemperatureDatastream[index] <= MAX_TEMPERATURE);
    }
 }
