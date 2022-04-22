@@ -58,7 +58,31 @@ bool printStatisticOnConsole(batteryParameters SOC,batteryParameters Temperature
 }
 
 
-
+bool ReadStreamingDataAndComputeStatistics(int *SOCDatastream, int *TemperatureDatastream )
+{
+    int sampleIndex;
+    bool retVal;
+    struct batteryParameters StateOFCharge, Temperature;
+    //Read data from console at once. could not find a way to read it line by line. SOC data is available only after reading all temperarure data
+    
+    getStreamingData(TemperatureDatastream);
+    getStreamingData(SOCDatastream);
+    
+    
+     for(sampleIndex=0;sampleIndex<NUMBEROFSAMPLE;sampleIndex++)
+  {
+    StateOFCharge.MaxValue = FindMAXValueWithCurrentSample(StateOFCharge.MaxValue,SOCDatastream[sampleIndex] );
+    Temperature.MaxValue = FindMAXValueWithCurrentSample(Temperature.MaxValue,TemperatureDatastream[sampleIndex] );
+    StateOFCharge.MinValue = FindMinValueWithCurrentSample(StateOFCharge.MinValue,SOCDatastream[sampleIndex] );
+    Temperature.MinValue = FindMinValueWithCurrentSample(Temperature.MinValue,TemperatureDatastream[sampleIndex] );
+    StateOFCharge.MovingAVg = findMovingAvgOfLastFiveSamples(SOCDatastream,sampleIndex);
+    Temperature.MovingAVg = findMovingAvgOfLastFiveSamples(TemperatureDatastream,sampleIndex);
+     retVal = printStatisticOnConsole(StateOFCharge,Temperature); 
+  }
+  
+  return retVal;
+    
+}
 
 
 
